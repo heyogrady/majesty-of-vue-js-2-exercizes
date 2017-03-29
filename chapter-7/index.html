@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Vue</title>
+    <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" data-vue-app>
+      <story plot="My horse is amazing"></story>
+      <story plot="My horse's name is Geraldine"></story>
+      <story plot="She eats carrots"></story>
+      <story plot="She also eats oats"></story>
+      <pre>
+
+      </pre>
+    </div>
+  </body>
+  <script src="../assets/vue.js"></script>
+  <script src="../../agent-bright/client/node_modules/lodash/lodash.min.js"></script>
+  <script type="text/template" id="story-template">
+    <h1>{{ plot }}</h1>
+  </script>
+  <script>
+    Vue.component('story', {
+      props: ['plot'],
+      template: '#story-template'
+    });
+
+    new Vue({
+      el: '[data-vue-app]'
+    });
+  </script>
+</html>
