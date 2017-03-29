@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-if="gender === 'female'">Hello Ms. {{ name }}</h1>
+      <h1 v-if="gender === 'male'">Hello Mr. {{ name }}</h1>
+      <h1 v-else>That's okay. It can be confusing sometimes.</h1>
+      <label>Enter your gender:</label>
+      <input v-model="gender">
+      <label>Enter your name:</label>
+      <input v-model="name">
+    </div>
+  </body>
+  <script src="../assets/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        gender: '',
+        name: '',
+      }
+    });
+  </script>
+</html>
